@@ -1,3 +1,11 @@
 module.exports = function check(str, bracketsConfig) {
-  // your solution
+  let length = ((str.length)/2)
+  for (let i=0; i<=length; ++i)
+  (bracketsConfig.map(pair => pair.join(''))).forEach(pair => {
+    str = str.replace(pair, '');
+    if (str == '') {
+      return true;
+    }
+  })
+  return (str == '') ? true : false;
 }
